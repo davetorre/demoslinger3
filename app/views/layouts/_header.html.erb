@@ -1,14 +1,19 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "demoslinger", '#', id: "logo" %>
+      <%= link_to "demoslinger", root_url, id: "logo" %>
       <nav>
         <ul class="nav pull-right" style="padding-top:5px">
           <li><%= link_to "Home",  root_path %></li>
           <li><%= link_to "About", about_path %></li>
-          <li><%= link_to "Post",  '#' %></li>
-          <li><%= link_to image_tag("btn-connect-s.png", 
-				alt: "Sign in with SoundCloud"), 'http://soundcloud.com' %></li>
+          <% if signed_in? %>
+		    <li><%= link_to "Post",  '#' %></li>
+		    <li><%= link_to image_tag("btn-disconnect-s.png", 
+			      alt: "Sign out"), "/sessions/destroy", method: 'delete' %></li>
+		  <% else %>
+			<li><%= link_to image_tag("btn-connect-s.png", 
+			      alt: "Sign in with SoundCloud"), "/sessions/redirect" %></li>
+		  <% end %>
         </ul>
       </nav>
     </div>
