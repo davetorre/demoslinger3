@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     # create client object with app credentials
     client = Soundcloud.new(:client_id => '6ff239effbbecc181fa6fc1080b8634a',
                             :client_secret => 'b5d44d8a2f528c5f42a4c0598ec6615d',
-                            :redirect_uri => 'http://localhost:3000/sessions/callback')
+                            :redirect_uri => 'http://localhost:3000''/sessions/callback')
   
     # exchange authorization code for access object
     auth_code = params[:code]

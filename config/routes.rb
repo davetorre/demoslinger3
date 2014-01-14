@@ -1,5 +1,5 @@
 Demoslinger3::Application.routes.draw do
-  resources :users, except: :new
+  resources :users, only: [:show, :index, :destroy]
   get    'sessions/redirect'
   get    'sessions/callback'
   delete 'sessions/destroy'
