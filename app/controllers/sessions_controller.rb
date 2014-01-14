@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
     # make an authenticated call
     current_user = client.get('/me')
     sc_user_name = current_user.username
-    sc_user_id = current_user.id
+    sc_user_id = current_user.id.to_s
         
     # check if user already exists
     user = User.find_by(sc_user_id: sc_user_id)
