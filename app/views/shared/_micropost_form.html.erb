@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="span4">
+    <%= form_for(@micropost) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.text_area :link, placeholder: "Link...", :style => "height:30px"%>
+
+	<%= f.check_box :drums %>
+	<%= label_tag(:drums, "drums") %>
+	<%= f.check_box :bass %>
+	<%= label_tag(:bass, "bass") %>
+	<%= f.check_box :keyboards %>
+	<%= label_tag(:keyboards, "keys") %>
+	<%= f.check_box :guitar %>
+	<%= label_tag(:guitar, "guitars") %>	
+	<%= f.check_box :vocals %>
+	<%= label_tag(:vocals, "vocals") %>
+    <%= f.text_area :content, placeholder: "Directions, contact info..." %>
+    <%= f.submit "Go", class: "btn btn-large btn-primary" %>
+    <% end %>  
+  </div>
+</div>

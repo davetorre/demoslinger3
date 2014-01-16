@@ -7,7 +7,7 @@
           <li><%= link_to "Home",  root_path %></li>
           <li><%= link_to "About", about_path %></li>
           <% if signed_in? %>
-		    <li><%= link_to "Post",  '#' %></li>
+		    <li><%= link_to "Post", new_micropost_path %></li>
 		    <li><%= link_to "Sign out", "/sessions/destroy", method: 'delete' %></li>
 		  <% else %>
 			<li><%= link_to image_tag("btn-connect-s.png", 

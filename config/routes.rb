@@ -1,10 +1,17 @@
 Demoslinger3::Application.routes.draw do
   resources :users, only: [:show, :index, :destroy]
+  resources :microposts, only: [:new, :create, :destroy]
   get    'sessions/redirect'
   get    'sessions/callback'
   delete 'sessions/destroy'
   root   'static_pages#home'
-  match  '/about', to: 'static_pages#about', via: 'get'
+  match  '/about',  to: 'static_pages#about',   via: 'get'
+  match '/drums',   to: 'static_pages#drums',   via: 'get'
+  match '/bass',    to: 'static_pages#bass',    via: 'get'
+  match '/keys',    to: 'static_pages#keys',    via: 'get'
+  match '/guitars', to: 'static_pages#guitars', via: 'get'
+  match '/vocals',  to: 'static_pages#vocals',  via: 'get'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

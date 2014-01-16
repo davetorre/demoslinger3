@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114150938) do
+ActiveRecord::Schema.define(version: 20140116033030) do
+
+  create_table "microposts", force: true do |t|
+    t.string   "content"
+    t.string   "link"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "drums"
+    t.boolean  "vocals"
+    t.boolean  "bass"
+    t.boolean  "guitar"
+    t.boolean  "keyboards"
+    t.boolean  "production"
+    t.boolean  "songwriting"
+  end
+
+  add_index "microposts", ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
 
   create_table "users", force: true do |t|
     t.string   "sc_user_name"
