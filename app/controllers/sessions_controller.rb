@@ -24,14 +24,13 @@ class SessionsController < ApplicationController
     access_token = access_object.access_token
     client = Soundcloud.new(access_token: access_token)
     
-    # make an authenticated call
+    # get info about soundcloud user
     current_user = client.get('/me')
     sc_user_name = current_user.username
     sc_user_id = current_user.id.to_s
         
-    # check if user already exists
+    # check if user already exists on demoslinger, if not, create new
     user = User.find_by(sc_user_id: sc_user_id)
-    
     if user.nil?
       user = User.new(sc_user_name: sc_user_name, sc_user_id: sc_user_id)
       if !user.save #unsuccessful save

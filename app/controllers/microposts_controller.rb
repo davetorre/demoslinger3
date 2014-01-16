@@ -10,8 +10,9 @@ class MicropostsController < ApplicationController
     client = Soundcloud.new(:client_id => 'ea6c8c0f29057082543a82182b0d4e15')
 
     # get a tracks oembed data
-    thing = client.get('/oembed', :url => params[:micropost][:link])[:html]
-    params[:micropost][:link] = thing
+    oembed = client.get('/oembed', :url => params[:micropost][:link])[:html]
+    
+    params[:micropost][:link] = oembed
     
     @micropost = current_user.microposts.build(micropost_params)
     if @micropost.save
