@@ -2,9 +2,7 @@
   <div class="span4">
     <%= form_for(@micropost) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-
     <%= f.text_area :link, placeholder: "Link...", :style => "height:30px"%>
-
 	<%= f.check_box :drums %>
 	<%= label_tag(:drums, "drums") %>
 	<%= f.check_box :bass %>

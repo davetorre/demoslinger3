@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    errors:
+      models:
+        micropost:
+          attributes:
+            link:
+              blank: "is not working.  Make sure you have the correct link."
