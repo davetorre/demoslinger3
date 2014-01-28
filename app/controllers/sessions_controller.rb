@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
   
   def redirect
     # create client object with app credentials
-    client = Soundcloud.new(:client_id => '6ff239effbbecc181fa6fc1080b8634a',
-                            :client_secret => 'b5d44d8a2f528c5f42a4c0598ec6615d',
+    client = Soundcloud.new(:client_id => '',
+                            :client_secret => '',
                             :redirect_uri => 'https://demoslinger.herokuapp.com/sessions/callback')
 
     # redirect user to authorize URL
@@ -12,8 +12,8 @@ class SessionsController < ApplicationController
   
   def callback
     # create client object with app credentials
-    client = Soundcloud.new(:client_id => '6ff239effbbecc181fa6fc1080b8634a',
-                            :client_secret => 'b5d44d8a2f528c5f42a4c0598ec6615d',
+    client = Soundcloud.new(:client_id => '',
+                            :client_secret => '',
                             :redirect_uri => 'https://demoslinger.herokuapp.com/sessions/callback')
   
     # exchange authorization code for access object
